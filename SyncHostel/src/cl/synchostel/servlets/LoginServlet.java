@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import cl.synchostel.entidades.Persona;
+
 /**
  * Servlet implementation class LoginServlet
  */
@@ -46,7 +48,11 @@ public class LoginServlet extends HttpServlet {
 	}
 	
 	void login (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		Persona persona = new Persona();
+		persona.login(request.getParameter("run"), request.getParameter("password"));
+		if(persona.getNombre().equals("")){
+			System.out.println("error");
+		}
 	}
 
 }

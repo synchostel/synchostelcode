@@ -1,8 +1,16 @@
 package cl.synchostel.entidades;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+
+import javax.ejb.EJB;
+
+import cl.synchostel.ejb.interfaces.PersonaEJBRemote;
 
 public class Persona {
+	
+	@EJB(mappedName = "SyncHostel/PersonaEJB")
+	private PersonaEJBRemote ejbPersona;
 	
 	/* 
 	 *  Atributos
@@ -105,6 +113,31 @@ public class Persona {
 		this.perfil = perfil;
 	}
 	
+	/*
+	 * Métodos
+	 */
 	
+	public void login(String run, String password){
+		HashMap<String,String> datosLogin = new HashMap<String,String>();
+		datosLogin.put("run", run);
+		datosLogin.put("password", password);
+		
+		HashMap<String,Object> datosPersona = new HashMap<String,Object>();
+		datosPersona = ejbPersona.login(run,password);
+		cargarDatos(datosPersona);
+	}
+	
+	public void cargarDatos(HashMap<String, Object> datosPersona){
+		this.rut = (String) datosPersona.get("run");
+		this.nombre = (String) datosPersona.get("nombre");
+		this.admin = ((Boolean) datosPersona.get("admin")).booleanValue();
+		this.direccion = (String) datosPersona.get("direccion");
+		this.email = (String) datosPersona.get("email");
+		this.fechaIngresoHostal = (String) datosPersona.get("fechaIngresoHostal");
+		this.fechaNacimiento = (String) datosPersona.get("fechaNacimiento");
+		this.password = (String) datosPersona.get("password");
+		this.telefono = (String) datosPersona.get("telefono");
+		this.telefono2 = (String) datosPersona.get("telefono2");
+	}
 	
 }
