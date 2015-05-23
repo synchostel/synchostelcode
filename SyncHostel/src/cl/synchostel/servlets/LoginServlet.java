@@ -1,6 +1,8 @@
 package cl.synchostel.servlets;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -33,7 +35,18 @@ public class LoginServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		if("container".equals(request.getParameter("accion"))){
+			//Loggin del Usuario
+			if(request.getSession().getAttribute("user")!=null){
+				RequestDispatcher a =request.getRequestDispatcher("index.jsp");
+				a.forward(request, response);
+			}	
+			login(request, response);
+		}
+	}
+	
+	void login (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 	}
 
 }
