@@ -37,7 +37,7 @@ public class LoginServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		if("container".equals(request.getParameter("accion"))){
+		if("login".equals(request.getParameter("accion"))){
 			//Loggin del Usuario
 			if(request.getSession().getAttribute("user")!=null){
 				RequestDispatcher a =request.getRequestDispatcher("index.jsp");

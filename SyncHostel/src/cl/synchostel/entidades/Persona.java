@@ -9,7 +9,7 @@ import cl.synchostel.ejb.interfaces.PersonaEJBRemote;
 
 public class Persona {
 	
-	@EJB(mappedName = "SyncHostel/PersonaEJB")
+	@EJB(mappedName = "SyncHostelEJB/PersonaEJB")
 	private PersonaEJBRemote ejbPersona;
 	
 	/* 

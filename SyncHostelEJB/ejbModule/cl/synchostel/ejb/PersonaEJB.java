@@ -18,8 +18,7 @@ import javax.sql.DataSource;
 /**
  * Session Bean implementation class PersonaEJB
  */
-@Stateless
-@LocalBean
+@Stateless(mappedName = "SyncHostel/PersonaEJB")
 public class PersonaEJB implements PersonaEJBRemote, PersonaEJBLocal {
 
 	@Resource(mappedName = "java:/SyncHostelDes")
