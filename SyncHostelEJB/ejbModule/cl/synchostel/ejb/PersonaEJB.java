@@ -10,8 +10,6 @@ import java.util.HashMap;
 import cl.synchostel.ejb.interfaces.PersonaEJBLocal;
 import cl.synchostel.ejb.interfaces.PersonaEJBRemote;
 
-import javax.annotation.Resource;
-import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.sql.DataSource;
 
@@ -21,7 +19,7 @@ import javax.sql.DataSource;
 @Stateless(mappedName = "SyncHostel/PersonaEJB")
 public class PersonaEJB implements PersonaEJBRemote, PersonaEJBLocal {
 
-	@Resource(mappedName = "java:/SyncHostelDes")
+//	@Resource(mappedName = "java:/SyncHostelDes")
 	private DataSource synchostelDS;
 	private Connection dbConeccion;
 	
