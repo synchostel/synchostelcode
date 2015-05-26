@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import cl.synchostel.beans.Persona;
 import cl.synchostel.ejb.interfaces.PersonaEJBRemote;
 
 /**
@@ -24,22 +25,30 @@ public class LoginServlet extends HttpServlet {
      */
     public LoginServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		
-	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		//Capturo los parámetros envíados por el JSP
+		
+		Persona persona  = new Persona();
+		
+		String run = request.getParameter("run");
+		String pass = request.getParameter("password");
+		persona.setRut(run);
+		persona.setPassword(pass);
+		
+		ejb.login(persona);
+		
+		if(persona.getPassword().equals(pass) && persona.getRut().equals(run)){
+			//Se encontró, se guarda una Cookie y se inicia sesión
+			response.sendRedirect("LoginSuccess.jsp");
+		}
+		else{
+			//No se encontró, redirige al login avisando el error
+		}
 	}
 
 }
