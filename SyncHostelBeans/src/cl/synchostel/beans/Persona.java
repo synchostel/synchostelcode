@@ -1,8 +1,12 @@
 package cl.synchostel.beans;
 
+import java.io.Serializable;
 import java.util.HashMap;
 
-public class Persona {
+public class Persona implements Serializable{
+	
+	private static final long serialVersionUID = -5711812047778938800L;
+	
 	private String rut;
 	private String nombre;
 	private Boolean admin;

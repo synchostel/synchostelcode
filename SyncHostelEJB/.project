@@ -3,6 +3,7 @@
 	<name>SyncHostelEJB</name>
 	<comment></comment>
 	<projects>
+		<project>SyncHostelBeans</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

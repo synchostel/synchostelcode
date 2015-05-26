@@ -1,6 +1,7 @@
 package cl.synchostel.servlets;
 
 import java.io.IOException;
+import java.util.HashMap;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
@@ -40,7 +41,15 @@ public class LoginServlet extends HttpServlet {
 		persona.setRut(run);
 		persona.setPassword(pass);
 		
-		ejb.login(persona);
+		HashMap<String,Persona> noPuedeSer = new HashMap<String,Persona>();
+		HashMap<String, Persona> mapaSalida = new HashMap<String, Persona>();
+		
+		noPuedeSer.put("persona", persona);
+		
+		mapaSalida = ejb.login(noPuedeSer);
+		
+		System.out.println(run);
+		System.out.println(persona.getRut());
 		
 		if(persona.getPassword().equals(pass) && persona.getRut().equals(run)){
 			//Se encontró, se guarda una Cookie y se inicia sesión
