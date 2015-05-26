@@ -17,7 +17,8 @@ import cl.synchostel.entidades.Persona;
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	
+	@EJB(mappedName = "SyncHostel/PersonaEJB")
+	private PersonaEJBRemote ejb;
 	
     /**
      * @see HttpServlet#HttpServlet()
@@ -32,8 +33,7 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		Persona p = new Persona();
-		p.lala();
+		
 	}
 
 	/**

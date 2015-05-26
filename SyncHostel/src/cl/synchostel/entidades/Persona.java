@@ -9,9 +9,6 @@ import cl.synchostel.ejb.interfaces.PersonaEJBRemote;
 
 public class Persona {
 	
-	@EJB(mappedName = "SyncHostel/PersonaEJB")
-	private PersonaEJBRemote ejb;
-	
 	private String rut;
 	private String nombre="";
 	private String email;
@@ -105,9 +102,6 @@ public class Persona {
 		this.perfil = perfil;
 	}
 	
-	public void lala(){
-		ejb.hola();
-	}
 	
 	public void cargarDatos(HashMap<String, Object> datosPersona){
 		this.rut = (String) datosPersona.get("run");
@@ -121,4 +115,5 @@ public class Persona {
 		this.telefono = (String) datosPersona.get("telefono");
 		this.telefono2 = (String) datosPersona.get("telefono2");
 	}
+
 }
