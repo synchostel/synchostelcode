@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import cl.synchostel.ejb.interfaces.PersonaEJBRemote;
-import cl.synchostel.entidades.Persona;
 
 /**
  * Servlet implementation class LoginServlet
