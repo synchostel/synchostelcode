@@ -17,13 +17,12 @@ public class Login {
 
     protected final Log logger = LogFactory.getLog(getClass());
 
-    @RequestMapping(value="/hello.htm")
+    @RequestMapping(value="/login.html")
     public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
         logger.info("Returning hello view");
-
-        return new ModelAndView("hello");
+        return new ModelAndView("login");
     }
 	
 }

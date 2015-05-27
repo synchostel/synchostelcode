@@ -19,7 +19,8 @@
 
   <servlet-mapping>
     <servlet-name>synchostel</servlet-name>
-    <url-pattern>*.htm</url-pattern>
+    <url-pattern>*.html</url-pattern>
+    <!--<url-pattern>*.lala</url-pattern> Se podría agregar algo así-->
   </servlet-mapping>
 
 </web-app>

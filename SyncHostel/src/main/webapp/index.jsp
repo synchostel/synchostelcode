@@ -7,5 +7,6 @@
   <body>
     <h1>Example - Spring Application</h1>
     <p>This is my test.</p>
+    <c:redirect url="/login.html"/>
   </body>
 </html>
