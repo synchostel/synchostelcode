@@ -8,6 +8,7 @@ import java.security.Key;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
+import java.util.Formatter;
 import java.util.Properties;
 
 import javax.crypto.BadPaddingException;
@@ -15,8 +16,6 @@ import javax.crypto.Cipher;
 import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.KeyGenerator;
 import javax.crypto.NoSuchPaddingException;
-
-import org.springframework.security.core.token.Sha512DigestUtils;
 
 public class Encryptor {
 	private Cipher cipherDecrypt;
@@ -97,9 +96,5 @@ public class Encryptor {
 	        e.printStackTrace();
 	    }
 	    return sha1;
-	}
-	
-	public static String sha512(String str){
-		return Sha512DigestUtils.shaHex(str);
-	}
+	}	
 }
