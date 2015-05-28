@@ -32,7 +32,6 @@ public class JPAPersonaDaoTests {
         List<Persona> personas = PersonaDAO.getPersonas();
 
         Persona p = personas.get(0);
-        String mail = p.getEmail();
         System.out.println(p.toString());
         p.setEmail("pipi@caca.com");
         PersonaDAO.savePersona(p);
