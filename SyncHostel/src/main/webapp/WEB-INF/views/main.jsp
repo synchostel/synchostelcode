@@ -1,3 +1,7 @@
+<%@ page language="java"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jstl/core" 	prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE html>
 <html class="csstransforms no-csstransforms3d csstransitions"><head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -58,5 +62,7 @@
 	</header>	
 </div>
 <div id="espacio"></div>
-<div id="contenedor"></div>    
+<div id="contenedor">
+	<%@ include file="inventario/inventario.jsp" %>
+</div>    
 </body></html>
