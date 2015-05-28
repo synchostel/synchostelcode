@@ -8,7 +8,6 @@ import java.security.Key;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
-import java.util.Formatter;
 import java.util.Properties;
 
 import javax.crypto.BadPaddingException;

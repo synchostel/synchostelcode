@@ -1,5 +1,5 @@
 package cl.encumming.synchostel.dao;
 
-public class JPAProductoDAO {
+public class JPAProductoDAO implements ProductoDAO{
 
 }
