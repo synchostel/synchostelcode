@@ -17,6 +17,8 @@ import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.KeyGenerator;
 import javax.crypto.NoSuchPaddingException;
 
+import org.springframework.security.core.token.Sha512DigestUtils;
+
 public class Encryptor {
 	private Cipher cipherDecrypt;
 	private Cipher cipherEncrypt;
@@ -96,5 +98,9 @@ public class Encryptor {
 	        e.printStackTrace();
 	    }
 	    return sha1;
-	}	
+	}
+	
+	public static String sha512(String str){
+		return Sha512DigestUtils.shaHex(str);
+	}
 }
