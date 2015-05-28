@@ -56,5 +56,7 @@
 			<div class="clear"></div>
 		</div>
 	</header>	
-</div>    
+</div>
+<div id="espacio"></div>
+<div id="contenedor"></div>    
 </body></html>
