@@ -6,8 +6,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
-
 import cl.encumming.synchostel.entity.Persona;
 
 @Repository(value="PersonaDAO")
@@ -21,12 +19,12 @@ public class JPAPersonaDAO implements PersonaDAO{
     }
 	
 	@SuppressWarnings("unchecked")
-	@Transactional(readOnly = true)
+	@Override
 	public List<Persona> getPersonas() {
 		return em.createQuery("select p from Persona p order by p.run").getResultList();	
 	}
 	
-	@Transactional(readOnly = false)
+	@Override
 	public void savePersona(Persona p) {
 		em.merge(p);
 	}
