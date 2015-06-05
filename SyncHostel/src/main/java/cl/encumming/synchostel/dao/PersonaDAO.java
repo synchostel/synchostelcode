@@ -5,6 +5,9 @@ import java.util.List;
 import cl.encumming.synchostel.entity.Persona;
 
 public interface PersonaDAO {
+	public void addPersona(Persona p);
+	public void updatePersona(Persona p);
 	public List<Persona> getPersonas();
-	public void savePersona(Persona p);
+	public Persona getPersonaById(int id);
+	public void removePersona(int id);
 }

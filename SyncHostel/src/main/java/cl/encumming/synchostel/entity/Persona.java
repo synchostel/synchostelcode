@@ -48,9 +48,9 @@ public class Persona implements Serializable{
 	
 	public String toString() {
         StringBuffer buffer = new StringBuffer();
-        buffer.append("Run: " + run + ";");
-        buffer.append("Nombre: " + nombre+";");
-        buffer.append("Email: " + email);
+        buffer.append(" Run :" + run + ";");
+        buffer.append(" Nombre :" + nombre+";");
+        buffer.append(" Email :" + email);
         return buffer.toString();
     }
 }
